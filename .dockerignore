@@ -1,0 +1,13 @@
+.git
+.venv
+venv
+sessions
+logs
+.env
+.env.*
+**/__pycache__
+**/*.pyc
+.pytest_cache
+tests
+agentcore
+app

@@ -1,0 +1,19 @@
+strands-agents>=1.64.0
+bedrock-agentcore>=1.13.0
+aws-opentelemetry-distro>=0.10.1
+boto3
+python-dotenv>=1.0
+
+# Ollama / Ollama Cloud (optional)
+strands-agents[ollama]>=1.64.0
+
+# Google Gemini (optional)
+strands-agents[gemini]>=1.64.0
+
+# Llama API / OpenAI-compatible providers (optional)
+strands-agents[llamaapi]>=1.64.0
+strands-agents[openai]>=1.64.0
+
+# Evaluations (optional)
+strands-agents-evals>=1.0.0
+nest-asyncio>=1.6.0

@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "customer-service-agent"
+version = "0.1.0"
+description = "A production-style customer service AI agent built with Strands Agents and Amazon Bedrock AgentCore."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT-0" }
+authors = [{ name = "Customer Service Agent" }]
+keywords = ["strands-agents", "bedrock", "agentcore", "ai-agents", "customer-service"]
+dependencies = [
+    "strands-agents>=1.64.0",
+    "bedrock-agentcore>=1.13.0",
+    "aws-opentelemetry-distro>=0.10.1",
+    "boto3",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+evals = [
+    "strands-agents-evals>=1.0.0",
+    "nest-asyncio>=1.6.0",
+]
+ollama = ["strands-agents[ollama]"]
+gemini = ["strands-agents[gemini]"]
+llama = ["strands-agents[llamaapi]"]
+openai = ["strands-agents[openai]"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+csa = "customer_service_agent.cli:main"
+customer-service-agent = "customer_service_agent.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+customer_service_agent = ["skills/*/SKILL.md", "skills/**/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
